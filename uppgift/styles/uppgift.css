@@ -1,0 +1,235 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	margin: 0;
+	background: whitesmoke; /*överskriver bakgrundsfärg från minigrisar.css*/
+	font-family: 'Work Sans', sans-serif;
+   
+}  
+.navigationlist {
+	width: 80%;
+	margin: 0 auto;
+    font-weight: 800;
+}
+header { /*Bakgrund i header*/
+  background: white;
+}
+header img { /*Grislogga i header*/
+   width: 10em; /*relativt mått*/
+   height: auto;
+   float: left;  
+   padding: 1em 0em 1em 0em;  
+}
+header::after { /*Pseudo-element, targetar sista barnet av elementet. Används i detta fallet för att nollställa float*/
+  content: '';
+  display: table;
+  clear: both;
+}
+nav { /*Gör texten till höger*/
+  float: right;
+}
+nav ul { /*Centrering och styling för listan*/
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li { /*Positionering och styling för texten i listan*/
+  display: inline-block;
+  margin-left: 4.375em;
+  padding-top: 2em;
+  position: relative;
+ 
+}
+nav a { /*Styling för länkar*/
+  color: #ff99aa;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1em;
+}
+nav a:hover { /*Styling vid hovrande över länkar*/
+  color: #a10f18;
+}
+nav a::before { /*Selektor före länkar i nav, de röda strecken över länkar*/
+  content: '';
+  display: block;
+  height: 0.313em;
+  background-color: #a10f18;
+  position: absolute;
+  top: 0;
+  width: 0%;
+  transition: all ease-in-out 250ms; /*Rörelse på strecken*/
+}
+nav a:hover::before { /*Pseudo-element. Strecket fyller upp hela delen där det är text*/
+  width: 100%;
+}
+
+.Banner img{ /*Bild i banner*/
+    margin: 0;
+    width: 100%;
+}
+.Pigpic{ /*Styr hela sektionerna med bilder*/
+    display: flex; /*fixerar bilderna*/
+    flex-direction: row; /*Lägger bilderna i rad*/
+    justify-content: center; /*centrerar bilder*/
+    max-height: 62.5em; /*max-höjd på bilder*/
+    overflow-x: hidden;/*ser tall att innehållet inte blir skrollbart horisontellt*/  
+}
+.Pigpic img{ /*Styr endast bilderna*/
+      height: 25em; /*Bestämd höjd*/
+      width: auto; /*Gör bilderna skalenliga*/
+      margin: 0.625em 0.313em 0.625em 0.625em; /*Marginaler för bilder*/
+  }
+
+.Pigtext { /*"Personlig historia om grisar"*/
+  background-color: white;
+  padding: 2em 0 2em 0;
+  display: flex;
+  flex: row;
+  justify-content: center;
+}
+
+h1 { /*Stylear rubrik*/
+    color:black; /*Färg på text*/
+    font-size: 1.9em; /*Relativt mptt på font*/
+    text-transform: uppercase; /*Versaler*/
+    font-weight: lighter; /*Lättare/smalare font*/
+    min-width: 30em;    /*Gör att texten inte buntar ihop sig när man ändrar stortlek på fönstret*/
+    max-width: 25em;   /*Gör att texten inte buntar ihop sig när man ändrar stortlek på fönstret*/
+}
+h2 { /*Ingress*/
+    color:black;
+    font-size: 1em;
+    font-weight:500;
+    margin: 2em 10em 0em 12em; /*Centrering av text*/
+    min-width: 30em; /*Sätter minimum bredd vid försminskning av fönster*/
+    max-width: 40em;/*Sätter maxbredd vid försminskning av fönster*/
+}
+
+.Pigtext p{ /*Brödtext*/
+      margin: 0em 8em 0em 12em;
+      padding-top: 2em;
+      font-weight: lighter;
+      float: left;  /*Positionerar texten till vänster*/
+      min-width: 30em;    
+      max-width: 35em;
+}
+.Girlpic { /*Styr Bild på tecknad flicka och gris*/
+      padding: 5em 0em 0em 10em;
+      width: 30em;
+      height: 20em;
+  }
+.Pigtext a { /*Kontextuell css-selektor*/
+    color: black;   
+  }
+.Boulepic { /*Storlek och position på boule-bild*/
+    padding: 6em 6em 2em 0em;  
+    width: 25em; 
+}
+
+.bouletext {
+    background-color: whitesmoke;
+}
+.Container { /*Styr hela boxen bakom beställningsformuläret*/
+    box-sizing: border-box; /*Lägger boxen innanför boxen*/
+    width: 100%;
+    height: 50%;
+    position: relative; /*Annat innehåll justeras inte för att passa in i någon lucka som elementet lämnar.*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.375em 6.250em;
+    background-color: white;
+    font-weight: lighter;
+    
+}
+.Container h3{ /*Rubrik i formulär*/
+    font-size: 1.375em;
+    font-weight: lighter;
+    margin: 1.250em 0.625em 1.875em 0.625em;
+    
+}
+
+.Contact-box{ /*Styr hela beställningsformuläret*/
+      max-width: 93.750em; /*Relativt mått mosvarar 1500px*/
+      display: grid; 
+      grid-template-columns: repeat(2, 1fr); /*Den första parametern är antalet reps, den andra parametern representerar storleken på en enskild rad*/
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: #fff;
+      
+}
+
+.Right{ /*Styr höger sida med bild*/
+      height: 25em;
+      width: auto;
+      background:url('images/duva.png') no-repeat center;
+}
+.Left{
+      padding: 1.563em 2.5em;
+    }
+.field{/*Styr fälten i formuläret*/
+      width: 100%;
+      padding: 0.5rem 1rem;
+      outline: none;
+      border:0.063em solid rgba(0, 0, 0, 0);
+      background-color: white;
+      font-size: 1.1rem;
+      margin-bottom:1.375em;
+      transition: .3s;
+    
+}
+.field:hover{ 
+      background-color: #edf1f2;
+    }
+.field:focus{ /*Ändrar ramen på fälten när de är klickade på*/
+      background-color: #fff;
+      border: 0.125em solid #ff99aa;
+  }
+.area { /*Storlek på meddelandefält*/
+      min-height: 9.375em;
+}
+.button {/*Skicka-knapp*/
+         width: 100%;
+        padding: 0.5rem 1rem;
+        font-size:1.1rem;
+        background-color: #ff99aa;
+        cursor: pointer;
+        outline: none;
+        color:#fff;
+        border:none;
+        transition: .3s;
+        box-shadow: 0em 0em 0.500em 0.063em rgba(128, 128, 128, 0.644); /*Sätter skugga på knapp*/
+        
+}
+.button:hover {
+      background-color:#a10f18;
+      border-radius: 0.625em; /*Rundar hörn vid hover*/
+      
+}
+li {
+    text-align: left;
+    list-style:inside;  
+    padding-left: 1em; 
+}
+li:first-of-type{ /*Sätter margin endast från knappen till första delen på listan*/
+    margin-top: 2em;
+}
+.pig-footer{
+    height: 7.5em;
+    width: 100%;  
+    text-align: center;
+    vertical-align: bottom;
+  }
+/*bild i footer - centrerar och sätter max-bredd*/
+.pig-footer img {
+    display: block;
+    max-width: 12.5em;
+    padding:2em 0em 2em 1em;
+    margin: auto;
+}
+footer p {
+    color:#a10f18
+}
